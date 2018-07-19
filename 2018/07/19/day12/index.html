@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 雪</title>
+  <title>组合数据类型的高级特性 | 雪</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="python、爬虫、Web开发">
-<meta property="og:type" content="website">
-<meta property="og:title" content="雪">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="Welcome to Hexo! 组合数据类型的高级特性range()函数12345678910$range()函数自身并不会自动产生整数序列，它需要使用其他方式来调用它才会产生。例如：&amp;gt;&amp;gt;&amp;gt; range(10)range(0, 10)&amp;gt;&amp;gt;&amp;gt; for i in range(10):	print(i,end=&apos; &apos;)0 1 2 3 4 5 6 7 8 9 &amp;gt;">
+<meta name="keywords" content="python、爬虫、Web开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="组合数据类型的高级特性">
+<meta property="og:url" content="http://yoursite.com/2018/07/19/day12/index.html">
 <meta property="og:site_name" content="雪">
+<meta property="og:description" content="Welcome to Hexo! 组合数据类型的高级特性range()函数12345678910$range()函数自身并不会自动产生整数序列，它需要使用其他方式来调用它才会产生。例如：&amp;gt;&amp;gt;&amp;gt; range(10)range(0, 10)&amp;gt;&amp;gt;&amp;gt; for i in range(10):	print(i,end=&apos; &apos;)0 1 2 3 4 5 6 7 8 9 &amp;gt;">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-19T12:44:59.514Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="雪">
+<meta name="twitter:title" content="组合数据类型的高级特性">
+<meta name="twitter:description" content="Welcome to Hexo! 组合数据类型的高级特性range()函数12345678910$range()函数自身并不会自动产生整数序列，它需要使用其他方式来调用它才会产生。例如：&amp;gt;&amp;gt;&amp;gt; range(10)range(0, 10)&amp;gt;&amp;gt;&amp;gt; for i in range(10):	print(i,end=&apos; &apos;)0 1 2 3 4 5 6 7 8 9 &amp;gt;">
   
     <link rel="alternative" href="/atom.xml" title="雪" type="application/atom+xml">
   
@@ -157,106 +161,166 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-day12" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      组合数据类型的高级特性
+    </h1>
+  
+
+        
+        <a href="/2018/07/19/day12/" class="archive-article-date">
+  	<time datetime="2018-07-19T02:21:55.688Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://wang-xin1.github.io/" target="_blank" rel="noopener">Hexo</a>!</p>
+<h2 id="组合数据类型的高级特性"><a href="#组合数据类型的高级特性" class="headerlink" title="组合数据类型的高级特性"></a>组合数据类型的高级特性</h2><h3 id="range-函数"><a href="#range-函数" class="headerlink" title="range()函数"></a>range()函数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">range()函数自身并不会自动产生整数序列，它需要使用其他方式来调用它才会产生。</span><br><span class="line">例如：</span><br><span class="line">&gt;&gt;&gt; range(10)</span><br><span class="line">range(0, 10)</span><br><span class="line">&gt;&gt;&gt; <span class="keyword">for</span> i <span class="keyword">in</span> range(10):</span><br><span class="line">	<span class="built_in">print</span>(i,end=<span class="string">' '</span>)</span><br><span class="line">0 1 2 3 4 5 6 7 8 9 </span><br><span class="line">&gt;&gt;&gt; <span class="built_in">type</span>(range(0, 10))</span><br><span class="line">&lt;class <span class="string">'range'</span>&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="列表推导式"><a href="#列表推导式" class="headerlink" title="列表推导式"></a>列表推导式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">列表生成式通常是结合range()函数一起使用的，使用列表推导式可以快速的产生一些有规律的序列。</span><br><span class="line">例如：</span><br><span class="line">&gt;&gt;&gt; li = [i*i <span class="keyword">for</span> i <span class="keyword">in</span> range(10)]</span><br><span class="line">&gt;&gt;&gt; li</span><br><span class="line">[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</span><br><span class="line">&gt;&gt;&gt; [i*i <span class="keyword">for</span> i <span class="keyword">in</span> range(10)]</span><br><span class="line">[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</span><br></pre></td></tr></table></figure>
+<h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">迭代器具有以下特点：</span><br><span class="line">1、Python迭代器Iterator可以记住遍历的位置的对象，从第一个元素开始访问，然后依次访问直到所有的元素都被遍历，最后返回一个Stop Iteration错误。</span><br><span class="line">2、迭代器只能往前不会后退，有两个基本方法：iter( )和next()。</span><br><span class="line">3、iter( )用来创建迭代器，next( )用来访问迭代器的下一个元素。</span><br><span class="line">4、字符串、列表或元组对象都能用来创建迭代器，同时也支持<span class="keyword">for</span>循环遍历。</span><br><span class="line">$</span><br><span class="line">迭代器的延迟作用：迭代器生成的元素并不是在迭代器声明时，就准备好了的。通常时在调用迭代器需要提供该元素时生成的，也就是说只有在我们需要的时候迭代器才产生相关元素，不需要时并不会主动的生成相关元素。我们可以把迭代器看成一个容器，到我们需要时使用next( )方法返回容器中的下一个值。</span><br><span class="line">迭代器实现了工厂模式的对象，它在你每次访问下一个值的时候给你返回。</span><br><span class="line">$</span><br><span class="line">例子：</span><br><span class="line">&gt;&gt;&gt; list1 = [<span class="string">'12'</span>,<span class="string">'sdd'</span>,<span class="string">'3de'</span>]</span><br><span class="line">&gt;&gt;&gt; iter_list = iter(list1)</span><br><span class="line">&gt;&gt;&gt; next(iter_list)</span><br><span class="line"><span class="string">'12'</span></span><br><span class="line">&gt;&gt;&gt; next(iter_list)</span><br><span class="line"><span class="string">'sdd'</span></span><br><span class="line">&gt;&gt;&gt; next(iter_list)</span><br><span class="line"><span class="string">'3de'</span></span><br><span class="line">&gt;&gt;&gt; next(iter_list)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;pyshell#31&gt;"</span>, line 1, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    next(iter_list)</span><br><span class="line">StopIteration</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="枚举函数enumerate"><a href="#枚举函数enumerate" class="headerlink" title="枚举函数enumerate()"></a>枚举函数enumerate()</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ </span><br><span class="line">enumerate( ) 通过<span class="keyword">for</span>循环可以输出下标并输出其下标所对应元素。</span><br><span class="line">例如：</span><br><span class="line">&gt;&gt;&gt; <span class="keyword">for</span> i,value <span class="keyword">in</span> enumerate([1,2,3,2,3,4]):</span><br><span class="line">	<span class="built_in">print</span>(i,value)</span><br><span class="line">0 1</span><br><span class="line">1 2</span><br><span class="line">2 3</span><br><span class="line">3 2</span><br><span class="line">4 3</span><br><span class="line">5 4</span><br><span class="line">函数格式：enumerate(iterable)</span><br><span class="line">返回值：生成一个枚举对象</span><br></pre></td></tr></table></figure>
+<h3 id="可迭代化的-iterable"><a href="#可迭代化的-iterable" class="headerlink" title="可迭代化的(iterable)"></a>可迭代化的(iterable)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">可迭代化（iterable）：表明相关的对象可以创建迭代器对象，同时他们自身都是可以进行<span class="keyword">for</span>数据遍历的。我们可以使用isinstance( )来判断对象是否为可迭代化</span><br><span class="line">例如：</span><br><span class="line">from collections import Iterable</span><br><span class="line">string = <span class="string">'hello'</span></span><br><span class="line"><span class="built_in">print</span>(isinstance(string, Iterable))  =&gt; True</span><br><span class="line">函数格式：isinstance(对象，类型)</span><br><span class="line">返回值：布尔值</span><br><span class="line">结果：如果指定的对象属于指定的类型，那么返回True，反之返回False</span><br></pre></td></tr></table></figure>
+<h3 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">1、创建方式</span><br><span class="line">第一种，使用列表推导式，将[]改为()，生成一个generator对象</span><br><span class="line">第二种，使用函数方式，采用yield关键字来实现</span><br><span class="line">2、使用</span><br><span class="line">生成器我们通常可以认为一种特殊的迭代器，但是它不需要像迭代器一样去实现__iter__,__next__方法。只需要使用yield关键字，该关键字可以在每次调用生成器函数时起到暂停作用，并将其值进行返回。同时还会记录当前运行值的状态。</span><br></pre></td></tr></table></figure>
+<h3 id="生成器与迭代器"><a href="#生成器与迭代器" class="headerlink" title="生成器与迭代器"></a>生成器与迭代器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">总结：迭代器和生成器</span><br><span class="line">1、容器是一系列的元素集合，str、list、<span class="built_in">set</span>、dict对象都可以看作是容器，容器都可以进行迭代（即用在<span class="keyword">while</span>或<span class="keyword">for</span>循环），凡是这样的容器我们都称为可迭代化对象（Iterable）。</span><br><span class="line">2、可迭代化对象都实现了__iter__方法，该方法返回一个迭代器对象。</span><br><span class="line">3、迭代器都拥有一个状态字段，用于记录下次迭代返回值。它实现了__next__和__iter__方法，迭代器不会一次性把所有的元素都加载到内存中，而是在需要的时候才生成返回结果。</span><br><span class="line">4、生成器是一种特殊的迭代器，它的返回值不是通过<span class="built_in">return</span>来返回的，而是通过yield来返回的。</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://github.com/wang-xin1/wang-xin1.github.io/blob/master/KW(CGIIZG~O4NN$DHGP2RGC.png?raw=true">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/12/day04/" class="archive-article-date">
-  	<time datetime="2018-07-12T08:07:33.353Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/12/day04/">Python 函数</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/19/day12/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/12/day01/" class="archive-article-date">
-  	<time datetime="2018-07-12T05:57:38.779Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-12</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/07/18/day11/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">组合数据类型-集合</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/12/day01/">Python 基础语法</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/10/hello-world/" class="archive-article-date">
-  	<time datetime="2018-07-10T12:06:08.676Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/10/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -283,8 +347,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
