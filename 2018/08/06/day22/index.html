@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | 雪</title>
+  <title>异常与异常处理 | 雪</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="python、爬虫、Web开发">
-<meta property="og:type" content="website">
-<meta property="og:title" content="雪">
-<meta property="og:url" content="http://yoursite.com/archives/2018/page/2/index.html">
+  <meta name="description" content="Welcome to Hexo! 异常概念12$指因程序出错在正常的执行流程之外，采取的行为。异常是一个事件，会在程序的执行过程中执行，并影响程序的执行 异常的阶段123$第一、产生异常（比如：代码错误、业务逻辑错误）第二、处理异常（比如：将异常提示更加可理解、增强代码的健壮性） 常见的异常类1234567$Exception：Python中所有异常的父类。NameError：访问了一个未声明的变">
+<meta name="keywords" content="python、爬虫、Web开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="异常与异常处理">
+<meta property="og:url" content="http://yoursite.com/2018/08/06/day22/index.html">
 <meta property="og:site_name" content="雪">
+<meta property="og:description" content="Welcome to Hexo! 异常概念12$指因程序出错在正常的执行流程之外，采取的行为。异常是一个事件，会在程序的执行过程中执行，并影响程序的执行 异常的阶段123$第一、产生异常（比如：代码错误、业务逻辑错误）第二、处理异常（比如：将异常提示更加可理解、增强代码的健壮性） 常见的异常类1234567$Exception：Python中所有异常的父类。NameError：访问了一个未声明的变">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-06T02:34:46.572Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="雪">
+<meta name="twitter:title" content="异常与异常处理">
+<meta name="twitter:description" content="Welcome to Hexo! 异常概念12$指因程序出错在正常的执行流程之外，采取的行为。异常是一个事件，会在程序的执行过程中执行，并影响程序的执行 异常的阶段123$第一、产生异常（比如：代码错误、业务逻辑错误）第二、处理异常（比如：将异常提示更加可理解、增强代码的健壮性） 常见的异常类1234567$Exception：Python中所有异常的父类。NameError：访问了一个未声明的变">
   
     <link rel="alternative" href="/atom.xml" title="雪" type="application/atom+xml">
   
@@ -157,295 +161,180 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-day22" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      异常与异常处理
+    </h1>
+  
+
+        
+        <a href="/2018/08/06/day22/" class="archive-article-date">
+  	<time datetime="2018-08-06T02:25:25.339Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-06</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://wang-xin1.github.io/" target="_blank" rel="noopener">Hexo</a>!</p>
+<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">指因程序出错在正常的执行流程之外，采取的行为。异常是一个事件，会在程序的执行过程中执行，并影响程序的执行</span><br></pre></td></tr></table></figure>
+<h3 id="异常的阶段"><a href="#异常的阶段" class="headerlink" title="异常的阶段"></a>异常的阶段</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">第一、产生异常（比如：代码错误、业务逻辑错误）</span><br><span class="line">第二、处理异常（比如：将异常提示更加可理解、增强代码的健壮性）</span><br></pre></td></tr></table></figure>
+<h3 id="常见的异常类"><a href="#常见的异常类" class="headerlink" title="常见的异常类"></a>常见的异常类</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">Exception：Python中所有异常的父类。</span><br><span class="line">NameError：访问了一个未声明的变量。</span><br><span class="line">keyError:访问一个不存在的字典key</span><br><span class="line">IndexError：索引超出序列的范围</span><br><span class="line">ValueError：传给函数的参数类型不正确。</span><br><span class="line">IOError：文件操作时输入输出错误</span><br></pre></td></tr></table></figure>
+<h3 id="异常处理流程"><a href="#异常处理流程" class="headerlink" title="异常处理流程"></a>异常处理流程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">基本语法：</span><br><span class="line">try：</span><br><span class="line">   可能会产生异常的代码</span><br><span class="line">except  对应的异常 as 别名：</span><br><span class="line">   异常处理语句</span><br><span class="line"></span><br><span class="line">说明：在try中，放置可能会产生错误的相关代码；except后标明对应的异常类型，一旦try中产生相关异常，except后声明的异常类能够对应捕获，执行相关异常处理语句。如果try外面后续还要其他语句，会继续执行。在产生异常是，出现异常的语句后，如果还有其他语句则不会执行。</span><br></pre></td></tr></table></figure>
+<h4 id="try-except-else"><a href="#try-except-else" class="headerlink" title="try except else"></a>try except else</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">try:</span><br><span class="line">   可能会产生异常的代码</span><br><span class="line">except 对应的异常 as 别名：</span><br><span class="line">   异常处理语句</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">   程序代码</span><br><span class="line">说明：在此结构中，如果try中的代码出现异常，则使用except后面声明的异常类进行捕获处理，如果没有异常出现，则执行<span class="keyword">else</span>内部的代码。</span><br></pre></td></tr></table></figure>
+<h4 id="try-except-except"><a href="#try-except-except" class="headerlink" title="try except except"></a>try except except</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">try:</span><br><span class="line">   可能会产生异常的代码</span><br><span class="line">except 对应的异常 as 别名：</span><br><span class="line">    异常处理语句</span><br><span class="line">except 对应的异常 as 别名：</span><br><span class="line">    异常处理语句</span><br><span class="line">说明：当try中有多行代码可能会出现不同的异常，那么使用多个except与之对应，根据产生异常的顺序来依次捕获处理。</span><br></pre></td></tr></table></figure>
+<h4 id="try-except-finally"><a href="#try-except-finally" class="headerlink" title="try except finally"></a>try except finally</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">try：</span><br><span class="line">   可能会出产生异常的代码</span><br><span class="line">except 对应的异常 as 别名：</span><br><span class="line">   异常处理语句</span><br><span class="line">finally：</span><br><span class="line">   代码</span><br><span class="line">说明：当异常捕获处理流程中，使用了finally来控制，表明不管是否出现异常进行捕获，最后代码都将允许finally内部的语句。</span><br><span class="line">注意：finally中的语句，不管前面的代码出现何种操作，比如：<span class="built_in">break</span>、<span class="built_in">return</span>、<span class="built_in">exit</span>等都会执行完finally内部的代码后，才会实现。</span><br></pre></td></tr></table></figure>
+<h3 id="异常的分类"><a href="#异常的分类" class="headerlink" title="异常的分类"></a>异常的分类</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">在Python中所有的异常都继承自BaseExcept,如下：</span><br><span class="line">          |------&gt;KeyboardInterrupt（键盘中断异常） </span><br><span class="line">          |</span><br><span class="line">BaseExcept|------&gt;SystemExit(系统退出异常)</span><br><span class="line">          |</span><br><span class="line">          |------&gt;Except（其他所有异常的父类）    </span><br><span class="line">其中：keyboardInterrupt在使用强制中断程序时产生。</span><br><span class="line">SystemExit在使用sys.exit()函数时产生。</span><br></pre></td></tr></table></figure>
+<h3 id="主动抛出异常"><a href="#主动抛出异常" class="headerlink" title="主动抛出异常"></a>主动抛出异常</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">raise 异常类对象实例或自定义异常类实例</span><br><span class="line">raise IOError(<span class="string">'IO 错误'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="finally的替换写法"><a href="#finally的替换写法" class="headerlink" title="finally的替换写法"></a>finally的替换写法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">with open(<span class="string">'myfile.txt'</span>,<span class="string">'r'</span>) as f:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">        <span class="built_in">print</span>(line)</span><br><span class="line">其中打开的文件对象f，在执行完内容的读取后，被强制性关闭。及时在读取过程中，出现错误，也会被关闭。</span><br></pre></td></tr></table></figure>
+<h3 id="使用异常机制的优势"><a href="#使用异常机制的优势" class="headerlink" title="使用异常机制的优势"></a>使用异常机制的优势</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">第一，把错误控制与业务逻辑进行区分，增强程序的可读性和健壮性。</span><br><span class="line">第二，代码结构更加清晰，复杂的业务流程的实现更加便利</span><br><span class="line">第三，程序的容错性更强，不会因为一个小bug导致整体崩溃。</span><br></pre></td></tr></table></figure>
+<h3 id="assert-断言"><a href="#assert-断言" class="headerlink" title="assert 断言"></a>assert 断言</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">语法格式：assert 表达式，断言内容。代码如下</span><br><span class="line">try:</span><br><span class="line">    assert 1==2,<span class="string">'1 不等于 2'</span></span><br><span class="line">except AssertionError as ae:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'&#123;&#125;&#123;&#125;'</span>.format(ae.__class__.__name__, ae))</span><br><span class="line">如果断言表达式为真，则正常执行，如果不为真，则返回断言内容，作为异常捕获的输出结果。</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://github.com/wang-xin1/wang-xin1.github.io/blob/master/KW(CGIIZG~O4NN$DHGP2RGC.png?raw=true">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/21/day13/" class="archive-article-date">
-  	<time datetime="2018-07-21T06:33:36.408Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/21/day13/">小练习</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/06/day22/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/19/day12/" class="archive-article-date">
-  	<time datetime="2018-07-19T02:21:55.688Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2018/08/06/day23/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          常用模块
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/08/06/day21/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">模块与包</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/19/day12/">组合数据类型的高级特性</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/18/day11/" class="archive-article-date">
-  	<time datetime="2018-07-18T01:18:52.801Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/18/day11/">组合数据类型-集合</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/18/day10/" class="archive-article-date">
-  	<time datetime="2018-07-18T00:46:23.297Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/18/day10/">组合数据类型-字典</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/17/day09/" class="archive-article-date">
-  	<time datetime="2018-07-17T01:00:44.074Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/17/day09/">组合数据类型-阶段测试</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/16/day08/" class="archive-article-date">
-  	<time datetime="2018-07-16T07:48:39.212Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/16/day08/">组合数据类型-元组</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/16/day07/" class="archive-article-date">
-  	<time datetime="2018-07-16T07:30:10.017Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/16/day07/">常用数据类型间的转换</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/16/day06/" class="archive-article-date">
-  	<time datetime="2018-07-16T05:42:53.798Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/16/day06/">组合数据类型-列表</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/15/day05/" class="archive-article-date">
-  	<time datetime="2018-07-15T09:36:39.617Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/15/day05/">控制语句</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/13/day03/" class="archive-article-date">
-  	<time datetime="2018-07-13T03:30:11.612Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/13/day03/">Python 关键字</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2018/">&laquo; Prev</a><a class="page-number" href="/archives/2018/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2018/page/3/">3</a><a class="extend next" rel="next" href="/archives/2018/page/3/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -472,8 +361,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

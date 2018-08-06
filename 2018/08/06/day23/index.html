@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | 雪</title>
+  <title>常用模块 | 雪</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="python、爬虫、Web开发">
-<meta property="og:type" content="website">
-<meta property="og:title" content="雪">
-<meta property="og:url" content="http://yoursite.com/archives/2018/page/2/index.html">
+  <meta name="description" content="Welcome to Hexo! 序列化模块1234567891011121314151617$说明：json和pickle运用差不多，都是用dump、load或者dumps、loads，但是pickle用于二进制文件的写入读出，而json是在python缓存中完成的。import picklewith open(&apos;pickle1.dat&apos;,&apos;wb&apos;) as wb:    dic = &amp;#123;">
+<meta name="keywords" content="python、爬虫、Web开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用模块">
+<meta property="og:url" content="http://yoursite.com/2018/08/06/day23/index.html">
 <meta property="og:site_name" content="雪">
+<meta property="og:description" content="Welcome to Hexo! 序列化模块1234567891011121314151617$说明：json和pickle运用差不多，都是用dump、load或者dumps、loads，但是pickle用于二进制文件的写入读出，而json是在python缓存中完成的。import picklewith open(&apos;pickle1.dat&apos;,&apos;wb&apos;) as wb:    dic = &amp;#123;">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-06T03:48:43.742Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="雪">
+<meta name="twitter:title" content="常用模块">
+<meta name="twitter:description" content="Welcome to Hexo! 序列化模块1234567891011121314151617$说明：json和pickle运用差不多，都是用dump、load或者dumps、loads，但是pickle用于二进制文件的写入读出，而json是在python缓存中完成的。import picklewith open(&apos;pickle1.dat&apos;,&apos;wb&apos;) as wb:    dic = &amp;#123;">
   
     <link rel="alternative" href="/atom.xml" title="雪" type="application/atom+xml">
   
@@ -157,295 +161,168 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-day23" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      常用模块
+    </h1>
+  
+
+        
+        <a href="/2018/08/06/day23/" class="archive-article-date">
+  	<time datetime="2018-08-06T02:34:59.369Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-06</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://wang-xin1.github.io/" target="_blank" rel="noopener">Hexo</a>!</p>
+<h2 id="序列化模块"><a href="#序列化模块" class="headerlink" title="序列化模块"></a>序列化模块</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">说明：json和pickle运用差不多，都是用dump、load或者dumps、loads，但是pickle用于二进制文件的写入读出，而json是在python缓存中完成的。</span><br><span class="line">import pickle</span><br><span class="line">with open(<span class="string">'pickle1.dat'</span>,<span class="string">'wb'</span>) as wb:</span><br><span class="line">    dic = &#123;<span class="string">'name'</span>:<span class="string">'张三'</span>,<span class="string">'age'</span>:20&#125;</span><br><span class="line">    pickle.dump(dic,wb)</span><br><span class="line">    pickle.dump(dic,wb)</span><br><span class="line">    pickle.dump(dic,wb)</span><br><span class="line"></span><br><span class="line">with open(<span class="string">'pickle1.dat'</span>,<span class="string">'rb'</span>) as rb:</span><br><span class="line">    <span class="keyword">while</span> True:</span><br><span class="line">        try:</span><br><span class="line">            item = pickle.load(rb)</span><br><span class="line">            <span class="built_in">print</span>(item)</span><br><span class="line">        except Exception as e:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'end'</span>)</span><br><span class="line">            <span class="built_in">break</span></span><br></pre></td></tr></table></figure>
+<h2 id="hashlib模块"><a href="#hashlib模块" class="headerlink" title="hashlib模块"></a>hashlib模块</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">import hashlib</span><br><span class="line">m = hashlib.md5()</span><br><span class="line">m.update(<span class="string">'123456'</span>.encode(<span class="string">'UTF-8'</span>))</span><br><span class="line"><span class="built_in">print</span>(m.hexdigest)</span><br><span class="line"><span class="comment"># md5算法加密</span></span><br><span class="line">m1 = hashlib.md5(<span class="string">'zy'</span>.encode(<span class="string">'UTF-8'</span>))</span><br><span class="line">m1.update(<span class="string">'123456'</span>.encode(<span class="string">'utf-8'</span>))</span><br><span class="line"><span class="built_in">print</span>(m1.hexdigest())</span><br><span class="line"><span class="comment"># 加盐</span></span><br><span class="line"><span class="comment">#高级 动态加盐</span></span><br><span class="line">user_name = input(<span class="string">'请输入用户名：'</span>)</span><br><span class="line">password = input(<span class="string">'输入密码：'</span>)</span><br><span class="line">m2 = hashlib.md5(user_name[::2].encode(<span class="string">'utf-8'</span>))</span><br><span class="line">m2.update(password.encode(<span class="string">'utf-8'</span>))</span><br><span class="line"><span class="built_in">print</span>(m2.hexdigest())</span><br><span class="line"><span class="comment"># 分开写和一起写是一样的结果，但是内容也要一致</span></span><br><span class="line">m = hashlib.md5()</span><br><span class="line">m.update(<span class="string">'tom is a good boy'</span>.encode(<span class="string">'utf-8'</span>))</span><br><span class="line"><span class="built_in">print</span>(m.hexdigest())</span><br><span class="line">m1 = hashlib.md5()</span><br><span class="line">m1.update(<span class="string">'tom'</span>.encode(<span class="string">'utf-8'</span>))</span><br><span class="line">m1.update(<span class="string">' is'</span>.encode(<span class="string">'utf-8'</span>))</span><br><span class="line">m1.update(<span class="string">' a'</span>.encode(<span class="string">'utf-8'</span>))</span><br><span class="line">m1.update(<span class="string">' good'</span>.encode(<span class="string">'utf-8'</span>))</span><br><span class="line">m1.update(<span class="string">' boy'</span>.encode(<span class="string">'utf-8'</span>))</span><br><span class="line"><span class="built_in">print</span>(m1.hexdigest())</span><br></pre></td></tr></table></figure>
+<h2 id="configparser模块-配置文件"><a href="#configparser模块-配置文件" class="headerlink" title="configparser模块 配置文件"></a>configparser模块 配置文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">例子：</span><br><span class="line">import configparser</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def createConfig(section, content, file):</span><br><span class="line">    <span class="comment"># 生成一个配置文件对象</span></span><br><span class="line">    config = configparser.ConfigParser()</span><br><span class="line">    config[section] = content</span><br><span class="line">    with open(file, <span class="string">'w'</span>) as f:</span><br><span class="line">        config.write(f)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def readConfig(file):</span><br><span class="line">    config = configparser.ConfigParser()</span><br><span class="line">    <span class="comment"># 将配置文件中的内容读取，原有的section及option都会被取出</span></span><br><span class="line">    config.read(file)</span><br><span class="line">    <span class="built_in">return</span> config</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def saveConfig(file):</span><br><span class="line">    with open(file, <span class="string">'w'</span>) as f:</span><br><span class="line">        config.write(f)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def removeSection(config, section, file):</span><br><span class="line">    <span class="comment"># 删除指定的section,同时会删除其内部的option</span></span><br><span class="line">    config.remove_section(section)</span><br><span class="line">    saveConfig(file)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def removeOption(config, section, option, file):</span><br><span class="line">    config.remove_option(section, option)</span><br><span class="line">    saveConfig(file)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def addSection(config, section, file):</span><br><span class="line">    config.add_section(section)</span><br><span class="line">    saveConfig(file)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def addOption(config, section, file, *option):</span><br><span class="line">    config.set(section, option[0], option[1])</span><br><span class="line">    saveConfig(file)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def findSection(config):</span><br><span class="line">    <span class="built_in">return</span> config.sections()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def findOptions(config, section):</span><br><span class="line">    <span class="built_in">return</span> config.options(section)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    section = <span class="string">'account'</span></span><br><span class="line">    content = &#123;<span class="string">'addr'</span>: <span class="string">'zhengzhou'</span>, <span class="string">'type'</span>: <span class="string">'A'</span>&#125;</span><br><span class="line">    file = <span class="string">'book.ini'</span></span><br><span class="line">    <span class="comment"># createConfig(section, content, file)</span></span><br><span class="line">    config = readConfig(file)</span><br><span class="line">    addSection(config, section, file)</span><br></pre></td></tr></table></figure>
+<h2 id="logging模块"><a href="#logging模块" class="headerlink" title="logging模块"></a>logging模块</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">简单配置模块配合语法糖使用：</span><br><span class="line">import logging</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def <span class="built_in">log</span>(msg):</span><br><span class="line">    <span class="comment"># 创建一个日志对象</span></span><br><span class="line">    logger = logging.getLogger(<span class="string">'pythonlogger'</span>)</span><br><span class="line">    logger.setLevel(logging.INFO)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 创建一个handler，用来将日志内容存入其中</span></span><br><span class="line">    file = logging.FileHandler(<span class="string">'test.log'</span>)</span><br><span class="line">    file.setLevel(logging.INFO)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 创建一个handler，用来将日志输出到控制台</span></span><br><span class="line">    console = logging.StreamHandler()</span><br><span class="line">    console.setLevel(logging.INFO)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 定义日志输出格式</span></span><br><span class="line">    formatter = logging.Formatter(</span><br><span class="line">        <span class="string">'%(asctime)s - %(name)s - %(levelname)s - %(message)s'</span>)</span><br><span class="line">    file.setFormatter(formatter)</span><br><span class="line">    console.setFormatter(formatter)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 将logger添加到handler</span></span><br><span class="line">    logger.addHandler(file)</span><br><span class="line">    logger.addHandler(console)</span><br><span class="line"></span><br><span class="line">    logger.info(msg)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def mylogger(f):</span><br><span class="line">    def inner(*var):</span><br><span class="line">        <span class="keyword">if</span> f(*var):</span><br><span class="line">            <span class="built_in">log</span>(f.__name__ + <span class="string">'操作成功'</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">log</span>(f.__name__ + <span class="string">'操作失败'</span>)</span><br><span class="line">        <span class="built_in">return</span> f(*var)</span><br><span class="line">    <span class="built_in">return</span> inner</span><br></pre></td></tr></table></figure>
+<h2 id="collections模块"><a href="#collections模块" class="headerlink" title="collections模块"></a>collections模块</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">from collections import Counter</span><br><span class="line">from collections import OrderedDict</span><br><span class="line">dic1 = &#123;<span class="string">'id'</span>:<span class="string">'wx'</span>,<span class="string">'age'</span>:<span class="string">'20'</span>&#125;</span><br><span class="line">dic2 = &#123;<span class="string">'name'</span>:<span class="string">'wx'</span>,<span class="string">'sex'</span>:<span class="string">'man'</span>&#125;</span><br><span class="line">order1 = OrderedDict([(<span class="string">'id'</span>,<span class="string">'wx'</span>),(<span class="string">'age'</span>,<span class="string">'20'</span>)])</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> order1.keys():</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"></span><br><span class="line">c = Counter(<span class="string">'asdadfdfsdfaasddafsfaf'</span>)</span><br><span class="line"><span class="built_in">print</span>(c)</span><br></pre></td></tr></table></figure>
+<h2 id="time模块"><a href="#time模块" class="headerlink" title="time模块"></a>time模块</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">格式化时间：<span class="string">'%Y-%m-%d %H:%M:%S %A'</span></span><br><span class="line">时间戳：7745259950.00</span><br><span class="line">结构化时间(struct_time):time.asctime(time.localtime(1500000000))</span><br><span class="line">三者之间转换：</span><br><span class="line"></span><br><span class="line">各种函数：</span><br><span class="line"></span><br><span class="line">例子：</span><br><span class="line">import time</span><br><span class="line"><span class="built_in">print</span>(time.time())</span><br><span class="line"><span class="built_in">print</span>(time.strftime(<span class="string">'%Y-%m-%d %H:%M:%S %A'</span>))</span><br><span class="line"><span class="built_in">print</span>(time.localtime())</span><br><span class="line"><span class="built_in">print</span>(time.gmtime())</span><br><span class="line"><span class="comment">#p = time.strptime('2018-08-08','%Y-%m-%d')</span></span><br><span class="line"><span class="comment">#print(time.mktime(p))</span></span><br><span class="line">p2 = time.localtime(1600000000)</span><br><span class="line"><span class="built_in">print</span>(p2,<span class="string">'lllll'</span>)</span><br><span class="line"><span class="built_in">print</span>(time.strftime(<span class="string">'%Y-%m-%d'</span>,p2))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(time.asctime(time.localtime(1500000000)))</span><br><span class="line"><span class="built_in">print</span>(time.ctime())</span><br></pre></td></tr></table></figure>
+<h2 id="random模块"><a href="#random模块" class="headerlink" title="random模块"></a>random模块</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">import random</span><br><span class="line"><span class="built_in">print</span>(random.random())    <span class="comment">#大于0且小于1之间的小数</span></span><br><span class="line"><span class="built_in">print</span>(random.uniform(1,3)) <span class="comment">#大于1且小于3的小数</span></span><br><span class="line"><span class="built_in">print</span>(random.randrange(1,10,2)) <span class="comment">#大于1且小于等于10之间的奇数</span></span><br><span class="line"><span class="built_in">print</span>(random.randint(1,10,2))<span class="comment">#大于1且小于等于10之间的奇数整数</span></span><br><span class="line"><span class="built_in">print</span>(random.choice([1,2,3,4,5,6,7,8,9,10]))<span class="comment">#随机选取一个</span></span><br><span class="line"><span class="built_in">print</span>(random.sample([1,<span class="string">'ac'</span>,[2,23]],2))<span class="comment">#列表元素任意两个组合</span></span><br><span class="line"><span class="comment">#打乱列表顺序</span></span><br><span class="line">item = [1,2,3,4,5]</span><br><span class="line">random.shuffle(item) <span class="comment">#打乱次序</span></span><br><span class="line"><span class="built_in">print</span>(item)</span><br></pre></td></tr></table></figure>
+<h2 id="sys模块"><a href="#sys模块" class="headerlink" title="sys模块"></a>sys模块</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$ sys模块：</span><br><span class="line">sys.argv           命令行参数List，第一个元素是程序本身路径</span><br><span class="line">sys.exit(n)        退出程序，正常退出时<span class="built_in">exit</span>(0),错误退出sys.exit(1)</span><br><span class="line">sys.version        获取Python解释程序的版本信息</span><br><span class="line">sys.path           返回模块的搜索路径，初始化时使用PYTHONPATH环境变量的值</span><br><span class="line">sys.platform       返回操作系统平台名称</span><br><span class="line">例子：</span><br><span class="line">1、</span><br><span class="line">import sys</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'*'</span>*20)</span><br><span class="line">sys.exit()  <span class="comment">#退出程序，后面的内容不会被执行</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'*'</span>*20)</span><br><span class="line">2、</span><br><span class="line">import sys</span><br><span class="line"><span class="built_in">print</span>(sys.version)    <span class="comment">#打印python版本</span></span><br><span class="line"><span class="built_in">print</span>(sys.platform)   <span class="comment">#打印系统版本(win or mac or linux)</span></span><br><span class="line"><span class="built_in">print</span>(sys.path)       <span class="comment">#打印路径</span></span><br><span class="line">3、</span><br><span class="line">创建一个新的py文件，命名为sys_argv.py。内容如下：</span><br><span class="line">import sys</span><br><span class="line"><span class="built_in">print</span>(sys.argv)</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://github.com/wang-xin1/wang-xin1.github.io/blob/master/KW(CGIIZG~O4NN$DHGP2RGC.png?raw=true">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/21/day13/" class="archive-article-date">
-  	<time datetime="2018-07-21T06:33:36.408Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/21/day13/">小练习</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/06/day23/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/19/day12/" class="archive-article-date">
-  	<time datetime="2018-07-19T02:21:55.688Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/08/06/day22/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">异常与异常处理</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/19/day12/">组合数据类型的高级特性</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/18/day11/" class="archive-article-date">
-  	<time datetime="2018-07-18T01:18:52.801Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/18/day11/">组合数据类型-集合</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/18/day10/" class="archive-article-date">
-  	<time datetime="2018-07-18T00:46:23.297Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/18/day10/">组合数据类型-字典</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/17/day09/" class="archive-article-date">
-  	<time datetime="2018-07-17T01:00:44.074Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/17/day09/">组合数据类型-阶段测试</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/16/day08/" class="archive-article-date">
-  	<time datetime="2018-07-16T07:48:39.212Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/16/day08/">组合数据类型-元组</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/16/day07/" class="archive-article-date">
-  	<time datetime="2018-07-16T07:30:10.017Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/16/day07/">常用数据类型间的转换</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/16/day06/" class="archive-article-date">
-  	<time datetime="2018-07-16T05:42:53.798Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/16/day06/">组合数据类型-列表</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/15/day05/" class="archive-article-date">
-  	<time datetime="2018-07-15T09:36:39.617Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/15/day05/">控制语句</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/13/day03/" class="archive-article-date">
-  	<time datetime="2018-07-13T03:30:11.612Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/13/day03/">Python 关键字</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2018/">&laquo; Prev</a><a class="page-number" href="/archives/2018/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2018/page/3/">3</a><a class="extend next" rel="next" href="/archives/2018/page/3/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -472,8 +349,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
