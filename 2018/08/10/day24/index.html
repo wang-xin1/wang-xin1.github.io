@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 雪</title>
+  <title>面向对象 | 雪</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="python、爬虫、Web开发">
-<meta property="og:type" content="website">
-<meta property="og:title" content="雪">
-<meta property="og:url" content="http://yoursite.com/archives/page/3/index.html">
+  <meta name="description" content="Welcome to Hexo! ##一、面向对象的概念1、类：指具有相同属性或行为的一组事物。   对象：是指类的具体化。类与对象的关系类是一组对象的抽象表示，而对象是类的具体化表现。2、类的语法结构class 类名：     变量声明语句     执行语句     def func(self):         执行语句其中，类名首字母要求大写（约定俗成），遵守Python命名规则，不能以数字">
+<meta name="keywords" content="python、爬虫、Web开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象">
+<meta property="og:url" content="http://yoursite.com/2018/08/10/day24/index.html">
 <meta property="og:site_name" content="雪">
+<meta property="og:description" content="Welcome to Hexo! ##一、面向对象的概念1、类：指具有相同属性或行为的一组事物。   对象：是指类的具体化。类与对象的关系类是一组对象的抽象表示，而对象是类的具体化表现。2、类的语法结构class 类名：     变量声明语句     执行语句     def func(self):         执行语句其中，类名首字母要求大写（约定俗成），遵守Python命名规则，不能以数字">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-10T01:54:34.564Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="雪">
+<meta name="twitter:title" content="面向对象">
+<meta name="twitter:description" content="Welcome to Hexo! ##一、面向对象的概念1、类：指具有相同属性或行为的一组事物。   对象：是指类的具体化。类与对象的关系类是一组对象的抽象表示，而对象是类的具体化表现。2、类的语法结构class 类名：     变量声明语句     执行语句     def func(self):         执行语句其中，类名首字母要求大写（约定俗成），遵守Python命名规则，不能以数字">
   
     <link rel="alternative" href="/atom.xml" title="雪" type="application/atom+xml">
   
@@ -157,160 +161,196 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-day24" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      面向对象
+    </h1>
+  
+
+        
+        <a href="/2018/08/10/day24/" class="archive-article-date">
+  	<time datetime="2018-08-10T01:17:19.872Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-10</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://wang-xin1.github.io/" target="_blank" rel="noopener">Hexo</a>!</p>
+<p>##<br>一、面向对象的概念<br>1、类：指具有相同属性或行为的一组事物。<br>   对象：是指类的具体化。<br>类与对象的关系<br>类是一组对象的抽象表示，而对象是类的具体化表现。<br>2、类的语法结构<br>class 类名：<br>     变量声明语句<br>     执行语句<br>     def func(self):<br>         执行语句<br>其中，类名首字母要求大写（约定俗成），遵守Python命名规则，不能以数字开头，通常我们都是字母开头。<br>注意：<br>1）如果类中声明了函数，其函数的参数，必须有一个默认的参数为self，self代表了该类的实例化对象。<br>2）如果在类中声明了变量，且该变量位于函数体之外，这个变量我们成为类变量，类变量是公共的。类变量的调用可以直接使用类名进行调用，比如：<br>class Dog:  # 定义一个类，类名Animal<br>    color = ‘灰色’<br>    leg_num = 4<br>    weight = 20<br>    width = 150</p>
+<pre><code>def wangwang(self):
+    print(&apos;wangwangwangwang&apos;)
+
+def eat(self):
+    print(&apos;一顿饭20块钱&apos;)
+
+def run(self):
+    print(&apos;非常快&apos;)
+</code></pre><p>husky = Dog()  # 将类实例化成对象，对象为dog<br>husky.run()<br>Dog.color</p>
+<p>类变量，作为公共的变量，不管类实例化多少个对象，都只实例一份类变量。而且类变量会在对象实例化之前载入内容，一旦改变了类变量中的内容，所有对象中调用这个类变量的值都会随之改变。</p>
+<p>3)在类实例化对象时，会将其定义的属性和行为，生成一份副本给具体的实例化对象。对象与对象之间，他们的属性和行为是不相互干扰的。</p>
+<p>class Dog:  # 定义一个类，类名Animal<br>    color = ‘灰色’</p>
+<pre><code>def __init__(self, num):
+    self.num = num
+
+
+def getNum(self):
+    print(self.num)
+</code></pre><p>husky = Dog(5)  # 将类实例化成对象，对象为dog<br>samoye = Dog(3)<br>husky.getNum()<br>samoye.getNum()</p>
+<p>我们在实例化Dog类时，生成两个对象husky、samoye，这两对象在实例化的过程中会生成两套成员变量和函数，他们的相互不干扰的。我们可以观察上面的代码，发现num变量属于成员变量，即husky和samoye各有持有相同的成员变量，但是修改num的值，husky为5，而samoye为3。结果表明他们的成员变量只能归各自的对象所拥有，并进行改变。对象与对象之间不会相互影响。<br>4）使用构造函数，来初始化成员变量<br>class Person:</p>
+<pre><code>def __init__(self):  # 构造函数，在实例化对象时被默认调用，用来给对象的成员变量赋值
+    self.name = &apos;tom&apos;
+    self.age = 21
+    self.tel = &apos;1350000000&apos;
+    self.address = &apos;北京&apos;
+    self.sex = &apos;男&apos;
+
+def setName(self, name):
+    self.name = name
+
+def getName(self):
+    return self.name
+</code></pre><p>p1 = Person()<br>p1.name<br>使用<strong>init</strong>()函数，用来初始化成员变量。对象在实例化时，会默认的调用<strong>init</strong>()函数，同时将成员变量进行初始化。同时，在构造函数中，使用self.变量名进行初始化的成员变量，都是公有的。即在类外可以通过实例化的对象调用。</p>
+<h2 id="类变量与成员变量的区别"><a href="#类变量与成员变量的区别" class="headerlink" title="类变量与成员变量的区别"></a>类变量与成员变量的区别</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">1、类变量是声明在类中，位于函数之外声明的变量。这些变量时公共的，即在类外使用类名.类变量的方式进行调用。我们一旦修改类变量的值，所有调用类变量的内容均发生改变。</span><br><span class="line">2、成员变量，是声明在类中的构造函数中，通过self.变量来进行声明赋值的。这些成员变量是公有的，即在类外可以通过对象名.成员变量的方式进行调用。所有的对象都有自己的成员变量，也就意味着每个对象的成员变量都是独立的，不会相互干扰。</span><br><span class="line">3、类变量是该类所有实例化对象所公有的，它会早于对象实例化之前被载入内容中。</span><br><span class="line">成员变量都是跟随对象实例化的过程中，被声明出来的。它是伴随着对象的产生而产生，消亡而消亡的。</span><br><span class="line">4、成员变量和方法，默认情况下都是公有的。也就是说在类外可以直接使用对象进行调用。我们可以通过为成员变量设置双下划线，将其标识为私有的成员变量，例如：self.__name = <span class="string">'tom'</span>。私有的成员变量只能在类内进行直接使用，类外必须通过相关方法进行间接调用。</span><br></pre></td></tr></table></figure>
+<h2 id="Python中对象创建的流程"><a href="#Python中对象创建的流程" class="headerlink" title="Python中对象创建的流程"></a>Python中对象创建的流程</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">1、Python创建一个对象，首先要调用__new__方法，用来创建并返回一个对象。通常，Python中不需要我们直接显示调用，它会默认调用object.__new__()方法</span><br><span class="line">2、然后，调用__init__方法，对该对象进行初始化。</span><br></pre></td></tr></table></figure>
+<h2 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">1、析构函数与构造函数一样，都是Python中特殊的函数。</span><br><span class="line">2、析构函数如果用户没有定义的话，Python会提供一个默认的析构函数</span><br><span class="line">3、析构函数__del__(self)，作用用来释放掉对象所占用的内存空间，在Python回收对象空间之前自动被执行。</span><br><span class="line">4、通常在析构函数中，主要是将对象中占用大量资源的变量进行手动的释放，便于后续Python解释器去回收这些内存空间。</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://github.com/wang-xin1/wang-xin1.github.io/blob/master/KW(CGIIZG~O4NN$DHGP2RGC.png?raw=true">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/13/day03/" class="archive-article-date">
-  	<time datetime="2018-07-13T03:30:11.612Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/13/day03/">Python 关键字</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/10/day24/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/13/day02/" class="archive-article-date">
-  	<time datetime="2018-07-13T03:03:44.940Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-13</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/08/06/day23/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">常用模块</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/13/day02/">Python 运算符</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/12/day04/" class="archive-article-date">
-  	<time datetime="2018-07-12T08:07:33.353Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/12/day04/">Python 函数</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/12/day01/" class="archive-article-date">
-  	<time datetime="2018-07-12T05:57:38.779Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/12/day01/">Python 基础语法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/10/hello-world/" class="archive-article-date">
-  	<time datetime="2018-07-10T12:06:08.676Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/10/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
   
 
 
@@ -337,8 +377,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

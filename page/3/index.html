@@ -159,6 +159,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-day03" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/13/day03/">Python 关键字</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/13/day03/" class="archive-article-date">
+  	<time datetime="2018-07-13T03:30:11.612Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://wang-xin1.github.io/" target="_blank" rel="noopener">Hexo</a>!</p>
+<h2 id="Python-关键字运算符"><a href="#Python-关键字运算符" class="headerlink" title="Python 关键字运算符"></a>Python 关键字运算符</h2><h3 id="切片运算符"><a href="#切片运算符" class="headerlink" title="[]切片运算符"></a>[]切片运算符</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$ 方法：str[索引]       <span class="comment"># 将索引所对应的元素输出</span></span><br><span class="line">        str[索引：索引] <span class="comment"># 从第一个索引开始到第二个之前结束（不包括第二个索引位对应的元素），取出中间的</span></span><br><span class="line">        str[索引：索引：步长] <span class="comment"># 步长表示隔步长减一取一个</span></span><br><span class="line">        str[索引::第几个] <span class="comment">#输出两个元素 第一个是索引对应的元素 第二个是从这个索引往后第几个元素</span></span><br><span class="line">        str[::-1]  <span class="comment"># 将字符串反转输出</span></span><br><span class="line">  切片操作：</span><br><span class="line">           &gt;&gt;&gt; str2</span><br><span class="line">           <span class="string">'hello  world'</span></span><br><span class="line">           &gt;&gt;&gt; str2[2]</span><br><span class="line">           <span class="string">'l'</span></span><br><span class="line">           &gt;&gt;&gt; str2[2:4]</span><br><span class="line">           <span class="string">'ll'</span></span><br><span class="line">     ***   &gt;&gt;&gt; str2[0:10:2]  <span class="comment">#步长为2 是隔一个取一个</span></span><br><span class="line">           <span class="string">'hlo o'</span> </span><br><span class="line">           &gt;&gt;&gt; str2[::-1]</span><br><span class="line">           <span class="string">'dlrow  olleh'</span></span><br><span class="line">           &gt;&gt;&gt; str2[1::10]</span><br><span class="line">           <span class="string">'ed'</span></span><br><span class="line">    注意：下列操作，会返回一个空字符串：</span><br><span class="line">          string1[-1:4]  =&gt; <span class="string">''</span></span><br><span class="line">          string1[-1:-5] =&gt; <span class="string">''</span></span><br></pre></td></tr></table></figure>
+<h3 id="连接符与重复操作符"><a href="#连接符与重复操作符" class="headerlink" title="连接符与重复操作符"></a>连接符与重复操作符</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ +：在字符串中使用时，作为连接两个字符串，并返回一个新字符串的作用来使用。</span><br><span class="line">*：重复操作指定的次数，即将字符串重复输出N次。返回一个新字符串。</span><br><span class="line">注意：在重复操作中，必须遵循：字符串*正整数这样的格式，如果数值不是正整数，其结果返回一个空字符串，如果不是数值类型，程序报错。</span><br></pre></td></tr></table></figure>
+<h3 id="in运算符"><a href="#in运算符" class="headerlink" title="in运算符"></a>in运算符</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ 用来检测指定的内容，是否在字符串中，如果存在则返回True，反之返回False</span><br><span class="line">例如:</span><br><span class="line">string1 = <span class="string">'hello world'</span></span><br><span class="line">&gt;&gt;&gt; substr = <span class="string">'e'</span></span><br><span class="line">&gt;&gt;&gt; substr <span class="keyword">in</span> string1</span><br><span class="line">True</span><br><span class="line">&gt;&gt;&gt; substr = <span class="string">'ll'</span></span><br><span class="line">&gt;&gt;&gt; substr <span class="keyword">in</span> string1</span><br><span class="line">True</span><br><span class="line">substr = <span class="string">'wr'</span></span><br><span class="line">&gt;&gt;&gt; substr <span class="keyword">in</span> string1</span><br><span class="line">False</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/13/day03/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-day02" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
