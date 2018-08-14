@@ -159,6 +159,77 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-day15" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/26/day15/">函数的补充</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/26/day15/" class="archive-article-date">
+  	<time datetime="2018-07-26T10:57:22.849Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://wang-xin1.github.io/" target="_blank" rel="noopener">Hexo</a>!</p>
+<h2 id="关于函数名的几种用法"><a href="#关于函数名的几种用法" class="headerlink" title="关于函数名的几种用法"></a>关于函数名的几种用法</h2><h3 id="函数名的本质"><a href="#函数名的本质" class="headerlink" title="函数名的本质"></a>函数名的本质</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">函数名本质上就是函数的内存地址：</span><br><span class="line">1、可以被引用                         <span class="comment"># 如果只输出一个函数名（后面不带括号），那么输出的只是这个函数所对应的内存地址</span></span><br><span class="line">2、可以被当做容器类型的元素使用  </span><br><span class="line">例如： </span><br><span class="line">def f1():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'a'</span>)</span><br><span class="line">def f2():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'b'</span>)</span><br><span class="line">l = [f1,f2]</span><br><span class="line">d = &#123;<span class="string">'f1'</span>:f1,<span class="string">'f2'</span>:f2&#125;</span><br><span class="line">l[0]()</span><br><span class="line">d[<span class="string">'f1'</span>]()</span><br><span class="line"></span><br><span class="line">3、可以当作函数的参数和返回值型的元素</span><br><span class="line">例如：</span><br><span class="line">def f1():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'6666'</span>)</span><br><span class="line">def f2(x):</span><br><span class="line">    x()</span><br><span class="line"></span><br><span class="line">f2(f1)</span><br></pre></td></tr></table></figure>
+<h2 id="函数的嵌套"><a href="#函数的嵌套" class="headerlink" title="函数的嵌套"></a>函数的嵌套</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">根据Python中，对函数的载入和调用特点。我们可以清楚看到，当Python运行相关文件时，如果遇到函数时，会先将其名字载入到内存中（即为函数名指定一个内存地址）。因此我们在使用函数名时，可以有以下三种情况：</span><br><span class="line">1、将函数名赋值给变量</span><br><span class="line">例如：</span><br><span class="line">def f1():</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">'ok'</span>)</span><br><span class="line"></span><br><span class="line">a = f1</span><br><span class="line">这是变量a中的值就是f1()函数名的内存地址。</span><br><span class="line">2、将函数名作为容器的元素</span><br><span class="line">def f1():</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">'ok'</span>)</span><br><span class="line">ls = [1,2,f1]</span><br><span class="line">注意，此时存入到列表ls中的f1，它的值仍然是该函数名对应的内存地址</span><br><span class="line">3、将函数名作为另外一个函数的参数，进行传递</span><br><span class="line">def f1():</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">'ok'</span>)</span><br><span class="line"></span><br><span class="line">def f2(x):</span><br><span class="line">   x()</span><br><span class="line">f2(f1)</span><br><span class="line">其执行结果为OK，这种方式类似与函数的普通嵌套,代码如下：</span><br><span class="line">def f2():</span><br><span class="line">   def f1():</span><br><span class="line">      <span class="built_in">print</span>(<span class="string">'ok'</span>)</span><br><span class="line">   f1()</span><br><span class="line">f2()</span><br></pre></td></tr></table></figure>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h3 id="闭包格式"><a href="#闭包格式" class="headerlink" title="闭包格式"></a>闭包格式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">def outer():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'我是外部函数'</span>)</span><br><span class="line">    def inner():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'我是闭包函数'</span>)</span><br><span class="line">    <span class="built_in">return</span> inner</span><br><span class="line"></span><br><span class="line">f = outer()</span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">通过对例子的观察，我们发现闭包函数的写法有如下特点：</span><br><span class="line">1、闭包函数作为内部函数，嵌套在外部函数中</span><br><span class="line">2、闭包函数会作为外部函数的返回值，进行返回。返回闭包函数时，只返回函数名，不带括号。</span><br><span class="line">3、外部调用时，首先要执行外部函数，然后将结果赋值给一个变量，此时该变量对应了闭包函数。</span><br><span class="line">4、我们可以通过__closure__内部函数可以观察到，闭包函数的存在。前提是，闭包函数要与外部函数进行数据传递或调用。</span><br></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">总结：闭包使用的数据，必须是本身定义或外部函数中定义的相关变量，通常需要调用外部函数的数据，形成一个封闭的函数结构。不能与外部数据（全局变量）发生交流。</span><br></pre></td></tr></table></figure>
+<h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">1、概念：装饰器本身仍然是一个函数。是我们队闭包应用的一种具体实现。</span><br><span class="line">2、作用：装饰器可以在不改变函数本身功能的情况下，为函数添加额外的功能。诸如：日志、测试、性能检测等。装饰器同样也是返回一个函数对象。</span><br><span class="line">3、应用：语法糖</span><br></pre></td></tr></table></figure>
+<h2 id="语法糖"><a href="#语法糖" class="headerlink" title="语法糖"></a>语法糖</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">使用格式：@+装饰器名称</span><br><span class="line">import time</span><br><span class="line">def outer(f):</span><br><span class="line">    def inner(*var):</span><br><span class="line">        start_time = time.time()</span><br><span class="line">        f(*var)</span><br><span class="line">        time.sleep(0.3)</span><br><span class="line">        end_time = time.time()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'此函数执行时间为&#123;0&#125;'</span>.format(str(end_time-start_time)))</span><br><span class="line">    <span class="built_in">return</span> inner</span><br><span class="line"></span><br><span class="line">@outer      <span class="comment"># 此处就是装饰器的声明，这种方法我们成为语法糖</span></span><br><span class="line">def func1():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'hello world'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">日志就是用语法糖的方法，生成日志。</span><br><span class="line">例如：</span><br><span class="line">def <span class="built_in">log</span>(msg):</span><br><span class="line">    <span class="comment"># 创建一个日志对象</span></span><br><span class="line">    logger = logging.getLogger(<span class="string">'pythonlogger'</span>)</span><br><span class="line">    logger.setLevel(logging.INFO)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 创建一个handler，用来将日志内容存入其中</span></span><br><span class="line">    file = logging.FileHandler(<span class="string">'test.log'</span>)</span><br><span class="line">    file.setLevel(logging.INFO)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 创建一个handler，用来将日志输出到控制台</span></span><br><span class="line">    console = logging.StreamHandler()</span><br><span class="line">    console.setLevel(logging.INFO)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 定义日志输出格式</span></span><br><span class="line">    formatter = logging.Formatter(</span><br><span class="line">        <span class="string">'%(asctime)s - %(name)s - %(levelname)s - %(message)s'</span>)</span><br><span class="line">    file.setFormatter(formatter)</span><br><span class="line">    console.setFormatter(formatter)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 将logger添加到handler</span></span><br><span class="line">    logger.addHandler(file)</span><br><span class="line">    logger.addHandler(console)</span><br><span class="line"></span><br><span class="line">    logger.info(msg)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def mylogger(f):</span><br><span class="line">    def inner(*var):</span><br><span class="line">        <span class="keyword">if</span> f(*var):</span><br><span class="line">            <span class="built_in">log</span>(f.__name__ + <span class="string">'操作成功'</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">log</span>(f.__name__ + <span class="string">'操作失败'</span>)</span><br><span class="line">        <span class="built_in">return</span> f(*var)</span><br><span class="line">    <span class="built_in">return</span> inner</span><br><span class="line"></span><br><span class="line">@mylogger</span><br><span class="line">def load(account, password):</span><br><span class="line">    flog = False</span><br><span class="line">    <span class="keyword">if</span> account <span class="keyword">in</span> user_dic.keys() and password == user_dic[account]:</span><br><span class="line">        flag = True</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        flag = False</span><br><span class="line">    <span class="built_in">return</span> flag</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/26/day15/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-day14" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -767,73 +838,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/07/16/day06/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-day05" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/15/day05/">控制语句</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/15/day05/" class="archive-article-date">
-  	<time datetime="2018-07-15T09:36:39.617Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://wang-xin1.github.io/" target="_blank" rel="noopener">Hexo</a>!</p>
-<h2 id="条件控制语句"><a href="#条件控制语句" class="headerlink" title="条件控制语句"></a>条件控制语句</h2><h3 id="单判断"><a href="#单判断" class="headerlink" title="单判断"></a>单判断</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ 格式：</span><br><span class="line"><span class="keyword">if</span> 代码：</span><br><span class="line">    代码</span><br><span class="line">$ 例子：</span><br><span class="line"><span class="keyword">if</span> a &lt; b:</span><br><span class="line">    <span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
-<h3 id="双分支判断"><a href="#双分支判断" class="headerlink" title="双分支判断"></a>双分支判断</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ 格式:</span><br><span class="line"><span class="keyword">if</span> 代码:</span><br><span class="line">    代码</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    代码</span><br><span class="line">$ 例子：</span><br><span class="line"><span class="keyword">if</span> a &lt; b:</span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(b)</span><br></pre></td></tr></table></figure>
-<h3 id="多分支判断"><a href="#多分支判断" class="headerlink" title="多分支判断"></a>多分支判断</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$ 格式：</span><br><span class="line"><span class="keyword">if</span> 代码：</span><br><span class="line">    代码</span><br><span class="line"><span class="keyword">elif</span> 代码：</span><br><span class="line">    代码</span><br><span class="line"><span class="keyword">elif</span> 代码：</span><br><span class="line">    代码</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    代码</span><br><span class="line">$ 例子：</span><br><span class="line"><span class="keyword">if</span> a &lt; b:</span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line"><span class="keyword">elif</span> a &gt; b:</span><br><span class="line">    <span class="built_in">print</span>(b)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(0)</span><br></pre></td></tr></table></figure>
-<h2 id="循环控制语句"><a href="#循环控制语句" class="headerlink" title="循环控制语句"></a>循环控制语句</h2><h3 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">$ </span><br><span class="line">第一种：（推荐）</span><br><span class="line"><span class="keyword">for</span> 变量 <span class="keyword">in</span> 集合：</span><br><span class="line">    代码</span><br><span class="line">说明：这种循环方式，我们称为快速迭代循环，能够对集合数据进行遍历。</span><br><span class="line">注意：这种方式只能用在集合数据上，比如：字符串、列表、元组、字典等内容。</span><br><span class="line">例如：</span><br><span class="line">string1 = <span class="string">'hello world'</span></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> string1:</span><br><span class="line">	<span class="built_in">print</span>(item)</span><br><span class="line">h</span><br><span class="line">e</span><br><span class="line">l</span><br><span class="line">l</span><br><span class="line">o</span><br><span class="line"></span><br><span class="line">w</span><br><span class="line">o</span><br><span class="line">r</span><br><span class="line">l</span><br><span class="line">d</span><br><span class="line">第二种：传统式，配合range( )函数使用。通过range()函数指定了循环的范围。</span><br><span class="line"><span class="keyword">for</span> i range(循环次数):</span><br><span class="line">    代码</span><br><span class="line"></span><br><span class="line">说明：这种循环方式，采用指定循环次数，对目标集合进行遍历。其做法主要是让循环与集合的下标同步，在循环次数时一同取出集合指定下标的对应值。</span><br><span class="line">$ range( )函数：</span><br><span class="line">函数格式：</span><br><span class="line">range(stop) :缺省情况下，表示从0开始，循环n次</span><br><span class="line">range(star,stop[,step])</span><br><span class="line">其中，star：循环开始的值，stop：循环次数，step：循环步长。注意此处循环，会根据stop中的值循环规定的次数，但是显示时会从start位置开始。</span><br><span class="line">例如：</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(3,10):</span><br><span class="line">	<span class="built_in">print</span>(i,end=<span class="string">' '</span>)</span><br><span class="line">3 4 5 6 7 8 9 </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(5,10):</span><br><span class="line">	<span class="built_in">print</span>(i,end=<span class="string">' '</span>)</span><br><span class="line">5 6 7 8 9 </span><br><span class="line">range(1,10)  </span><br><span class="line"></span><br><span class="line">$ <span class="keyword">for</span>循环的常用方式：嵌套</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(次数):</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(次数):</span><br><span class="line">    </span><br><span class="line">注意：在这种嵌套表示的过程中，变量的位置尤为重要，通用原则为：如果变量的值需要通过外层循环来获取或生成，那么我们可以将其设为全局变量，即与外层循环<span class="keyword">for</span>同等级的变量，如果变量需要在内层循环中生成或获取，我们通常会在外循环中声明，即与内循环同级。</span><br></pre></td></tr></table></figure>
-<h3 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ 格式：</span><br><span class="line"><span class="keyword">while</span> 条件:</span><br><span class="line">    代码</span><br><span class="line">例子：</span><br><span class="line"><span class="keyword">while</span> True：</span><br><span class="line">    pass</span><br><span class="line">这是个死循环.</span><br><span class="line">注意：当使用<span class="keyword">while</span>循环语句时，按要求设定初始进入条件以及必要的计数器。</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/15/day05/">展开全文 >></a>
         </p>
       
 

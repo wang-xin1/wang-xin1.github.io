@@ -159,6 +159,76 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-day25" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/14/day25/">继承、封装与多态</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/14/day25/" class="archive-article-date">
+  	<time datetime="2018-08-14T09:52:02.739Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://wang-xin1.github.io/" target="_blank" rel="noopener">Hexo</a>!</p>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">1、Python中能够实现单继承与多继承。</span><br><span class="line">单继承：就是子类只有一个直接父类。</span><br><span class="line">多继承：子类有两个及两个以上的直接父类。</span><br><span class="line">2、子类继承父类，子类可以继承父类的相关特征。子类继承了父类的方法，如果在多继承情况下，父类出现同名函数，那么子类继承该函数时，根据继承的顺序进行调用。</span><br><span class="line">3、super( )函数，它指代了当前类的父类。我们可以在子类中调用super函数，用来初始化父类。但是使用super()调用父类的构造函数时，只能对多继承中的第一个父类生效。</span><br><span class="line">4、抽象与继承的区别与关系</span><br><span class="line">抽象：指对同一类别事物的相似部分进行抽取。抽象我们认为是对具体化对象的相关行为和属性的泛化过程。</span><br><span class="line">继承：Python中我们通常认为类就是一个抽象的内容。类本身并不能直接执行，需要通过继承，进行对象的实例化，进而获得具体的对象本身，才能执行相关的功能。</span><br><span class="line">也就是说继承其实是抽象的具体化过程。</span><br><span class="line">5、多继承中，当一个子类继承多个父类时，我们需要如下声明：</span><br><span class="line">class SubClass(A,B):</span><br><span class="line">其中，A、B是SubClass的父类。那么，如果我们分为两种个情况：</span><br><span class="line">第一，子类中没有显式的定义__init__()，那么在实例化子类时调用其父类的构造函数。如果有多个类，都定义了__init()函数，那么它会调用第一个具有__init__()函数的父类。</span><br><span class="line">第二，子类中显式的定义理论__init_(),那么实例化子类时不再调用父类的构造函数。此时，如果我们要调用父类的构造函数，有两种方法。</span><br><span class="line">1)、在子类的构造函数中，显式的调用对应父类的构造函数，例如：</span><br><span class="line">A.__init__()</span><br><span class="line">2)、采用super()函数，super().__init__()或者super(子类，self).__init__()</span><br><span class="line">但是如果遇到其多个父类，他们的构造函数同名时，我们根据他们在MRO中的顺序，分别调用他们，例如：</span><br><span class="line">class SubClass(B, A):</span><br><span class="line">    def __init__(self):</span><br><span class="line">        super().__init__()   <span class="comment"># 此处调用了父类B</span></span><br><span class="line">        super(B, self).__init__() <span class="comment">#此处调用了父类C</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'我是子类'</span>)</span><br><span class="line">注意，在这里不要看到super就认为是父类，但是在多继承时，实际上super指的是MRO中的下一个类。</span><br></pre></td></tr></table></figure>
+<h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">在Python中，我们针对其内部细节进行封装。通常我们将属性定义为私有类型，意味着在类外无法直接访问。可以通过相关的方法对其进行调用。</span><br><span class="line">私有的成员变量和方法，都需要在类内进行定义。所有在类外实现的定义都是公有的，代码如下：</span><br><span class="line">class A:</span><br><span class="line">    __N = <span class="string">'hello'</span>      <span class="comment"># 此处是一个私有的类变量</span></span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.__name = <span class="string">'tom'</span></span><br><span class="line"></span><br><span class="line">    def __method(self):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'我是私有函数'</span>)</span><br><span class="line"></span><br><span class="line">    def show(self):</span><br><span class="line">        self.__method()</span><br><span class="line">        <span class="built_in">print</span>(self.__name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = A()</span><br><span class="line">A.__age = 10       <span class="comment"># 此处的__age是一个公有的类变量</span></span><br><span class="line"><span class="built_in">print</span>(A.__age)</span><br></pre></td></tr></table></figure>
+<h2 id="property方法"><a href="#property方法" class="headerlink" title="property方法"></a>property方法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">在Python中，我们可以使用property来修饰指定的函数，被修饰后的函数，在类外可以通过对象调用（类似调用变量）</span><br><span class="line"></span><br><span class="line">class Person:</span><br><span class="line">    def __init__(self, name, height, weight):</span><br><span class="line">        self.__name = name</span><br><span class="line">        self.__height = height</span><br><span class="line">        self.__weight = weight</span><br><span class="line">    </span><br><span class="line">    @property</span><br><span class="line">    def bmi(self):</span><br><span class="line">        <span class="built_in">return</span> self.__weight / self.__height**2</span><br><span class="line"></span><br><span class="line">p = Person()</span><br><span class="line"><span class="built_in">print</span>(p.bmi)  <span class="comment"># 此处调用的bmi是Person类中的函数。</span></span><br><span class="line">原理：当类被载入时，首先会载入类的名称和被property修饰的名字到类的命名空间中；然后在类对象进行实例化时，Python解析器会查找是否存在property修饰的名字，如果存在，就不在实例化对象是为其分配内存空间。</span><br></pre></td></tr></table></figure>
+<h2 id="classmethod方法"><a href="#classmethod方法" class="headerlink" title="classmethod方法"></a>classmethod方法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">在Python中，我们通常使用classmethod用来修饰一个方法，这个方法就被称为类方法，类方法通常用来操作类变量。类方法和类变量一样，都需要通过类名来调用。</span><br><span class="line">class Goods:</span><br><span class="line">    __discount = 0.8</span><br><span class="line"></span><br><span class="line">    def __init__(self, name, price):</span><br><span class="line">        self.__name = name</span><br><span class="line">        self.__price = price</span><br><span class="line"></span><br><span class="line">    @classmethod</span><br><span class="line">    def change_discount(cls, new_discount): <span class="comment">#此处传递的默认参数不是对象参数self，而是类参数cls</span></span><br><span class="line">        cls.__discount = new_discount</span><br><span class="line">    </span><br><span class="line">    @classmethod</span><br><span class="line">    def get_discount(cls):</span><br><span class="line">        <span class="built_in">return</span> cls.__discount</span><br><span class="line"></span><br><span class="line">goods = Goods(<span class="string">'apple'</span>, 6)</span><br><span class="line"><span class="built_in">print</span>(Goods.get_discount())</span><br><span class="line">Goods.change_discount(0.9)</span><br><span class="line"><span class="built_in">print</span>(Goods.get_discount())</span><br></pre></td></tr></table></figure>
+<h2 id="staticmethod方法"><a href="#staticmethod方法" class="headerlink" title="staticmethod方法"></a>staticmethod方法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">在Python中，我们使用staticmethod来修饰函数，该函数被称为静态方法，首先，静态方法不需要使用对象参数或类参数作为默认参数。其次，静态方法通常只能调用类变量，而不可以使用成员变量。最后，在类外进行调用时，可以使用类名来调用。</span><br><span class="line"></span><br><span class="line">实例方法、类方法与静态方法的区别</span><br><span class="line">实例方法：第一个参数必须是实例对象（self）,通过它来传递实例的属性和方法，只能由实例对象来调用。</span><br><span class="line">类方法：使用装饰器@classmethod，第一个参数必须是类对象（cls）,通过它来传递类的属性和方法。可以通过实例对象或类对象来调用，通常使用类对象调用。</span><br><span class="line">静态方法：使用装饰器@staticmethod,没有默认参数（self和cls），但是方法体中不能使用类或实例对象的任何属性和方法。可以通过实例对象或类对象进行调用。</span><br><span class="line"></span><br><span class="line">1、类方法和静态方法都可以通过对象实例或者类名来调用。</span><br><span class="line">2、类方法主要针对的是类，可以通过继承和重新定义</span><br><span class="line">3、静态方法不能被继承，无法被重写，可以被认为是全局函数。静态方法在使用时完全不会用到对象实例本身。静态方法逻辑上属于类，但是不会涉及到类中的属性和方法的操作。</span><br></pre></td></tr></table></figure>
+<h2 id="方法重写"><a href="#方法重写" class="headerlink" title="方法重写"></a>方法重写</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">概念：当子类继承父类时，子类会继承父类所有的公有方法。如果在子类中重写定义一个与父类中同名的方法，我们成为方法的重写（覆盖）。方法重写只需要名字相同即可，与方法的参数个数、顺序无关</span><br></pre></td></tr></table></figure>
+<h2 id="多态与鸭子类型"><a href="#多态与鸭子类型" class="headerlink" title="多态与鸭子类型"></a>多态与鸭子类型</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">多态：多态一般都是通过继承来实现的，也就是根据不同的对象形态来进行区分。我们在Python中，使用多态时，意味着在编码时变量并不知道所引用的对象具体内容，只有在程序运行时相关对象被实例化后，才能够确定。</span><br><span class="line">鸭子类型：在Python中，因为其自身特性并没有对多态进行明确的规定，可以创建一个功能相似，但与原对象无关的、全新对象，来实现程序的松耦合。</span><br><span class="line">我们通常在开发中，采用接口的方式来实现。</span><br><span class="line">我们认为在一组功能相似，但没有继承关系的对象中，采用接口方式。</span><br><span class="line">class Payment:</span><br><span class="line">    def payment(self, money):</span><br><span class="line">        pass</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Weixinpay(Payment):</span><br><span class="line">    def payment(self, money):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'微信支付了&#123;0&#125;元'</span>.format(money))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Alipay(Payment):</span><br><span class="line">    def payment(self, money):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'支付宝支付了&#123;0&#125;元'</span>.format(money))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class My(Payment):</span><br><span class="line">    def payment(self, money):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'支付了&#123;0&#125;元'</span>.format(money))</span><br><span class="line"></span><br><span class="line">此例，我们可以看到：</span><br><span class="line">第一，通过继承，实现了多态，即三种支付方式不同的形态</span><br><span class="line">第二，我们观察到，微信支付、支付宝、个人支付，三者之间没有任何继承关系，但是都具有相同的支付功能，我们可以认为这种形式就是鸭子类型</span><br><span class="line">第三，因为三种支付方式，分别继承了接口类Payment，都重新了相关的支付方法payment()</span><br></pre></td></tr></table></figure>
+<h2 id="运算符重载"><a href="#运算符重载" class="headerlink" title="运算符重载"></a>运算符重载</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1、__getitem__：索引迭代</span><br><span class="line">在Python，可迭代化对象在使用循环迭代时，都会默认的调用__iter__,如果没有next()方法，会调用__getitem__方法。</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/14/day25/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-day24" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -755,77 +825,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/07/26/day16/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-day15" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/26/day15/">函数的补充</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/26/day15/" class="archive-article-date">
-  	<time datetime="2018-07-26T10:57:22.849Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://wang-xin1.github.io/" target="_blank" rel="noopener">Hexo</a>!</p>
-<h2 id="关于函数名的几种用法"><a href="#关于函数名的几种用法" class="headerlink" title="关于函数名的几种用法"></a>关于函数名的几种用法</h2><h3 id="函数名的本质"><a href="#函数名的本质" class="headerlink" title="函数名的本质"></a>函数名的本质</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">函数名本质上就是函数的内存地址：</span><br><span class="line">1、可以被引用                         <span class="comment"># 如果只输出一个函数名（后面不带括号），那么输出的只是这个函数所对应的内存地址</span></span><br><span class="line">2、可以被当做容器类型的元素使用  </span><br><span class="line">例如： </span><br><span class="line">def f1():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'a'</span>)</span><br><span class="line">def f2():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'b'</span>)</span><br><span class="line">l = [f1,f2]</span><br><span class="line">d = &#123;<span class="string">'f1'</span>:f1,<span class="string">'f2'</span>:f2&#125;</span><br><span class="line">l[0]()</span><br><span class="line">d[<span class="string">'f1'</span>]()</span><br><span class="line"></span><br><span class="line">3、可以当作函数的参数和返回值型的元素</span><br><span class="line">例如：</span><br><span class="line">def f1():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'6666'</span>)</span><br><span class="line">def f2(x):</span><br><span class="line">    x()</span><br><span class="line"></span><br><span class="line">f2(f1)</span><br></pre></td></tr></table></figure>
-<h2 id="函数的嵌套"><a href="#函数的嵌套" class="headerlink" title="函数的嵌套"></a>函数的嵌套</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">根据Python中，对函数的载入和调用特点。我们可以清楚看到，当Python运行相关文件时，如果遇到函数时，会先将其名字载入到内存中（即为函数名指定一个内存地址）。因此我们在使用函数名时，可以有以下三种情况：</span><br><span class="line">1、将函数名赋值给变量</span><br><span class="line">例如：</span><br><span class="line">def f1():</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">'ok'</span>)</span><br><span class="line"></span><br><span class="line">a = f1</span><br><span class="line">这是变量a中的值就是f1()函数名的内存地址。</span><br><span class="line">2、将函数名作为容器的元素</span><br><span class="line">def f1():</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">'ok'</span>)</span><br><span class="line">ls = [1,2,f1]</span><br><span class="line">注意，此时存入到列表ls中的f1，它的值仍然是该函数名对应的内存地址</span><br><span class="line">3、将函数名作为另外一个函数的参数，进行传递</span><br><span class="line">def f1():</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">'ok'</span>)</span><br><span class="line"></span><br><span class="line">def f2(x):</span><br><span class="line">   x()</span><br><span class="line">f2(f1)</span><br><span class="line">其执行结果为OK，这种方式类似与函数的普通嵌套,代码如下：</span><br><span class="line">def f2():</span><br><span class="line">   def f1():</span><br><span class="line">      <span class="built_in">print</span>(<span class="string">'ok'</span>)</span><br><span class="line">   f1()</span><br><span class="line">f2()</span><br></pre></td></tr></table></figure>
-<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h3 id="闭包格式"><a href="#闭包格式" class="headerlink" title="闭包格式"></a>闭包格式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">def outer():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'我是外部函数'</span>)</span><br><span class="line">    def inner():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'我是闭包函数'</span>)</span><br><span class="line">    <span class="built_in">return</span> inner</span><br><span class="line"></span><br><span class="line">f = outer()</span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">通过对例子的观察，我们发现闭包函数的写法有如下特点：</span><br><span class="line">1、闭包函数作为内部函数，嵌套在外部函数中</span><br><span class="line">2、闭包函数会作为外部函数的返回值，进行返回。返回闭包函数时，只返回函数名，不带括号。</span><br><span class="line">3、外部调用时，首先要执行外部函数，然后将结果赋值给一个变量，此时该变量对应了闭包函数。</span><br><span class="line">4、我们可以通过__closure__内部函数可以观察到，闭包函数的存在。前提是，闭包函数要与外部函数进行数据传递或调用。</span><br></pre></td></tr></table></figure>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">总结：闭包使用的数据，必须是本身定义或外部函数中定义的相关变量，通常需要调用外部函数的数据，形成一个封闭的函数结构。不能与外部数据（全局变量）发生交流。</span><br></pre></td></tr></table></figure>
-<h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">1、概念：装饰器本身仍然是一个函数。是我们队闭包应用的一种具体实现。</span><br><span class="line">2、作用：装饰器可以在不改变函数本身功能的情况下，为函数添加额外的功能。诸如：日志、测试、性能检测等。装饰器同样也是返回一个函数对象。</span><br><span class="line">3、应用：语法糖</span><br></pre></td></tr></table></figure>
-<h2 id="语法糖"><a href="#语法糖" class="headerlink" title="语法糖"></a>语法糖</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">使用格式：@+装饰器名称</span><br><span class="line">import time</span><br><span class="line">def outer(f):</span><br><span class="line">    def inner(*var):</span><br><span class="line">        start_time = time.time()</span><br><span class="line">        f(*var)</span><br><span class="line">        time.sleep(0.3)</span><br><span class="line">        end_time = time.time()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'此函数执行时间为&#123;0&#125;'</span>.format(str(end_time-start_time)))</span><br><span class="line">    <span class="built_in">return</span> inner</span><br><span class="line"></span><br><span class="line">@outer      <span class="comment"># 此处就是装饰器的声明，这种方法我们成为语法糖</span></span><br><span class="line">def func1():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'hello world'</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">日志就是用语法糖的方法，生成日志。</span><br><span class="line">例如：</span><br><span class="line">def <span class="built_in">log</span>(msg):</span><br><span class="line">    <span class="comment"># 创建一个日志对象</span></span><br><span class="line">    logger = logging.getLogger(<span class="string">'pythonlogger'</span>)</span><br><span class="line">    logger.setLevel(logging.INFO)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 创建一个handler，用来将日志内容存入其中</span></span><br><span class="line">    file = logging.FileHandler(<span class="string">'test.log'</span>)</span><br><span class="line">    file.setLevel(logging.INFO)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 创建一个handler，用来将日志输出到控制台</span></span><br><span class="line">    console = logging.StreamHandler()</span><br><span class="line">    console.setLevel(logging.INFO)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 定义日志输出格式</span></span><br><span class="line">    formatter = logging.Formatter(</span><br><span class="line">        <span class="string">'%(asctime)s - %(name)s - %(levelname)s - %(message)s'</span>)</span><br><span class="line">    file.setFormatter(formatter)</span><br><span class="line">    console.setFormatter(formatter)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 将logger添加到handler</span></span><br><span class="line">    logger.addHandler(file)</span><br><span class="line">    logger.addHandler(console)</span><br><span class="line"></span><br><span class="line">    logger.info(msg)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def mylogger(f):</span><br><span class="line">    def inner(*var):</span><br><span class="line">        <span class="keyword">if</span> f(*var):</span><br><span class="line">            <span class="built_in">log</span>(f.__name__ + <span class="string">'操作成功'</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">log</span>(f.__name__ + <span class="string">'操作失败'</span>)</span><br><span class="line">        <span class="built_in">return</span> f(*var)</span><br><span class="line">    <span class="built_in">return</span> inner</span><br><span class="line"></span><br><span class="line">@mylogger</span><br><span class="line">def load(account, password):</span><br><span class="line">    flog = False</span><br><span class="line">    <span class="keyword">if</span> account <span class="keyword">in</span> user_dic.keys() and password == user_dic[account]:</span><br><span class="line">        flag = True</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        flag = False</span><br><span class="line">    <span class="built_in">return</span> flag</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/26/day15/">展开全文 >></a>
         </p>
       
 
